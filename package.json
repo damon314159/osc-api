@@ -8,8 +8,8 @@
     "start": "node --env-file=.env dist/server.js || npm run show-hint",
     "dev": "tsx watch --env-file=.env src/server.ts || npm run show-hint",
     "show-hint": "echo \"\nFailed to start. Check the following:\n - You have the required env vars in /.env\n - You have run db migrations\n - You ran 'npm i' to install deps\n - You ran 'npm run build' to generate code\n\"",
-    "test": "tsx --test $(find . -wholename \"./tests/**/*.test.ts\")",
-    "test:watch": "tsx --test --watch $(find . -wholename \"./tests/**/*.test.ts\")",
+    "test": "vitest run",
+    "test:watch": "vitest",
     "lint": "eslint --fix --ext 'js,ts,jsx,tsx' .",
     "format": "prettier -w **/* -l",
     "type-check": "tsc --noEmit",
@@ -44,7 +44,8 @@
     "eslint-plugin-unicorn": "^56.0.1",
     "prettier": "^3.4.2",
     "tsx": "^4.19.2",
-    "typescript": "^5.7.3"
+    "typescript": "^5.7.3",
+    "vitest": "^3.0.4"
   },
   "overrides": {
     "rimraf": "^4.0.0"

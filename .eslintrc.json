@@ -45,16 +45,8 @@
       }
     ]
   },
-  "overrides": [
-    {
-      "files": ["*.test.ts"],
-      "rules": {
-        "@typescript-eslint/no-floating-promises": "off"
-      }
-    }
-  ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
-    "project": "./tsconfig.json"
+    "project": ["./tsconfig.json", "./tsconfig.test.json"]
   }
 }
