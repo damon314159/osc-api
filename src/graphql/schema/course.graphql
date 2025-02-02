@@ -1,0 +1,35 @@
+type Course {
+  id: ID!
+  title: String!
+  description: String!
+  duration: Int!
+  outcome: String!
+  collection: Collection
+}
+
+input AddCourseInput {
+  title: String!
+  description: String!
+  duration: Int!
+  outcome: String!
+  collectionId: Int
+}
+
+input UpdateCourseInput {
+  title: String
+  description: String
+  duration: Int
+  outcome: String
+  collectionId: Int
+}
+
+type Query {
+  courses(limit: Int, sortOrder: SortOrder): [Course!]!
+  course(id: ID!): Course
+}
+
+type Mutation {
+  addCourse(input: AddCourseInput!): Course!
+  updateCourse(id: ID!, input: UpdateCourseInput!): Course!
+  deleteCourse(id: ID!): Boolean!
+}
