@@ -1,7 +1,8 @@
 export const mockUser = {
   id: 1,
   username: "testuser",
-  email: "test@example.com",
+  password: "$a-password-hash",
+  role: "USER" as const,
   createdAt: new Date(),
   updatedAt: new Date(),
 };
